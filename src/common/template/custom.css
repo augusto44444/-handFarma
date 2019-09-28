@@ -1,0 +1,11 @@
+.skin-blue .main-header .navbar .sidebar-toggle:hover{
+    background: #00ABC4
+}
+
+.box.box-primary {
+    border-top-color: #0097A7
+}
+
+.skin-blue .main-header li.user-header{
+    background: #00bcd4
+}
