@@ -32,6 +32,8 @@ export const GetUserData = (userData) => {
 }
 
 
+
+
 export const login = (email, password) => {
     return dispatch => {
         if (!email) {
@@ -51,7 +53,7 @@ export const login = (email, password) => {
 
         axios.post(`${BASE_URL}/usuario/auth`, { email, password })
             .then(res => {
-                if(res.data.error || res.data.dados == null){
+                if (res.data.error || res.data.dados == null) {
                     toastr.warning(res.data.msg)
                     return dispatch(temp())
                 }
@@ -66,26 +68,26 @@ export const login = (email, password) => {
                     ])
 
                 } else {
-                //     if (!res.data.erro) {
-                //         if (res.data.dados[0]) {
-                //             toastr.success(res.data.msg);
-                //             axios.post(`${BASE_URL}/autonomo/profile`, { codigo: res.data.dados[0].usu_in_codigo })
-                //                 .then(resp => {
-                //                     console.log(resp)
-                //                     dispatch([
-                //                         UserLoggedIn(res.data.dados[0])
-                //                     ])
-                //                 })
+                    //     if (!res.data.erro) {
+                    //         if (res.data.dados[0]) {
+                    //             toastr.success(res.data.msg);
+                    //             axios.post(`${BASE_URL}/autonomo/profile`, { codigo: res.data.dados[0].usu_in_codigo })
+                    //                 .then(resp => {
+                    //                     console.log(resp)
+                    //                     dispatch([
+                    //                         UserLoggedIn(res.data.dados[0])
+                    //                     ])
+                    //                 })
 
-                //         } else {
-                //             toastr.warning(res.data.msg);
-                //             dispatch(temp())
-                //         }
-                //     } else {
-                //         toastr.error('Aviso', 'Usuário inexistente ou E-mail incorreto');
-                //         console.log(res.data.errorMessage);
-                //         dispatch(temp())
-                //     }
+                    //         } else {
+                    //             toastr.warning(res.data.msg);
+                    //             dispatch(temp())
+                    //         }
+                    //     } else {
+                    //         toastr.error('Aviso', 'Usuário inexistente ou E-mail incorreto');
+                    //         console.log(res.data.errorMessage);
+                    //         dispatch(temp())
+                    //     }
                 }
             })
     }
@@ -93,14 +95,14 @@ export const login = (email, password) => {
 
 export const recoverPass = (email) => {
     return dispatch => {
-        if(!email) {
+        if (!email) {
             toastr.warning("Você deve informar seu email")
             return dispatch(temp())
         }
 
         axios.post(`${BASE_URL}/password/recovery`, { email })
             .then(res => {
-                if(res.data.error) {
+                if (res.data.error) {
                     toastr.error("Algo deu errado ao enviar o email")
                     return dispatch(temp())
                 } else {
@@ -119,29 +121,29 @@ export const recoverPass = (email) => {
 
 export const changePassword = (id, email, password, confirmPassword) => {
     return dispatch => {
-        if(!email) {
+        if (!email) {
             console.log("Email nao chegou")
             return dispatch(temp())
         }
 
-        if(!password) {
+        if (!password) {
             toastr.warning("Você deve informar uma senha")
             return dispatch(temp())
         }
 
-        if(password != confirmPassword) {
+        if (password != confirmPassword) {
             toastr.warning("As senhas devem ser iguais")
             return dispatch(temp())
         }
 
-        if(password.length < 6) {
+        if (password.length < 6) {
             toastr.warning("Sua senha deve ter 6 ou mais caracteres")
             return dispatch(temp())
         }
 
         axios.put(`${BASE_URL}/password/${id}`, { email, password })
             .then(res => {
-                if(res.data.error) {
+                if (res.data.error) {
                     toastr.error("Algo deu errado")
                     return dispatch(temp())
                 } else {
