@@ -7,11 +7,13 @@ import ProdutosPage from '../CalassAndComponents/Produto/ProdutosPage'
 import editProduto from '../CalassAndComponents/Produto/editProduto'
 import editFarmacia from '../CalassAndComponents/Farmacia/editFarmacia'
 import ProdutoFarmacia from '../CalassAndComponents/ProdutoFarmacia/ProdutoFarmacia'
+import ProdutosFarmacia from '../CalassAndComponents/Farmacia/produtosFarmacia'
 
 
 export default props => (
     <Router history={hashHistory}>
         <Route path='/' component={Home} />
+        <Route path='/farmacia/produtos' component={ProdutosFarmacia} />
         <Route path='/farmacia' component={FarmaciaPage} />
         <Route path='/cadfarmacia' component={FormFarmacia} />
         <Route path='/editFarmacia' component={editFarmacia} />

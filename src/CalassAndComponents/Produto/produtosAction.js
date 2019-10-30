@@ -108,10 +108,10 @@ export const getProdutosByFarmacia = (farmaciaId) => {
             return dispatch(temp())
         }
 
-        axios.get(`${BASE_URL}/produto/farmacia/${farmaciaId}}`)
+        axios.get(`${BASE_URL}/produto/farmacia/${farmaciaId}`)
             .then(res => {
                 if(res.data.err) {
-                    console.log(err)
+                    console.log(res.data)
                     toastr.error("Erro", "Erro ao buscar produtos por farmacia")
                     return dispatch(temp())
                 }
