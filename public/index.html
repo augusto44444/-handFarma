@@ -4,6 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="manifest.json" />
+
     <title>HandFarma</title>
     <link rel='stylesheet' href='app.css'>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -12,6 +15,12 @@
 <body class='skin-blue fixed sidebar-mini'>
     <div id="app"></div>
     <script src='app.js'></script>
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .catch((err) => console.log("service worker not registered", err));
+        }
+    </script>
 </body>
 
 </html>
