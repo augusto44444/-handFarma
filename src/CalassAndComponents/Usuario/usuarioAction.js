@@ -63,7 +63,7 @@ export const login = (email, password) => {
                         name: 'ADMIN'
                     }
                     dispatch([
-                        UserLoggedIn(res.data.dados[0]),
+                        UserLoggedIn(res.data),
                         GetUserData(obj),
                     ])
 

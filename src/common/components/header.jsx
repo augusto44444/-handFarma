@@ -9,11 +9,11 @@ export default props => (
             <span className='logo-mini' style={{background: '#0097A7'}}>
                 <IoMdHand color='#00BCD4' />
                 <b style={{ color: '#FFC107' }}>H</b>
-                <span style={{ color: '#B2EBF2' }}>F</span>
+                <span style={{ color: '#FFF' }}>F</span>
             </span>
             <span className='logo-lg'  style={{background: '#0097A7'}}>
                 <IoMdHand color='#00BCD4' />
-                <b style={{ color: '#FFC107' }}> Hand</b> <span style={{ color: '#B2EBF2' }}>Farma</span>
+                <b style={{ color: '#FFC107' }}> Hand</b> <span style={{ color: '#FFF' }}>Farma</span>
             </span>
         </a>
         <nav className='navbar navbar-static-top hover' style={{background: '#00BCD4'}}>
