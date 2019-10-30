@@ -39,45 +39,47 @@ class FarmaciaPage extends Component {
                     <div className="box-body">
 
 
-                        <table className='table'>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Rua</th>
-                                <th>Número</th>
-                                <th>Bairro</th>
-                                <th>Cidade</th>
-                                <th>telefone</th>
-                                <th>Celular</th>
-                                <th>Ação</th>
-                            </tr>
-                            <tbody>
-                                {
-                                    farmacias.map(far => {
-                                        return (
-                                            <tr key={far.far_in_codigo}>
-                                                <th>{far.far_st_nome}</th>
-                                                <th>{far.far_st_rua}</th>
-                                                <th>{far.far_in_numero}</th>
-                                                <th>{far.far_st_bairro}</th>
-                                                <th>{far.far_st_cidade + '-' + far.far_ch_estado}</th>
-                                                <th>{far.far_st_telefone}</th>
-                                                <th>{far.far_st_celular}</th>
-                                                <th>
-                                                    <a style={{ marginLeft: 10 }} href='#/editFarmacia' onClick={() => {
-                                                        this.props.setFarmacia(far)
-                                                    }} className='btn btn-primary'>
-                                                        <FaPen color='#FFC10C' />
-                                                    </a>
-                                                    <a style={{ marginLeft: 10 }} className='btn btn-primary' onClick={() => this.props.DeleteFarmacia(far.far_in_codigo, far.usu_in_codigo)} >
-                                                        <FaTrash color='#FFC10C' />
-                                                    </a>
-                                                </th>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </table>
+                        <div style={{ overflowX: 'auto' }}>
+                            <table className='table'>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Rua</th>
+                                    <th>Número</th>
+                                    <th>Bairro</th>
+                                    <th>Cidade</th>
+                                    <th>telefone</th>
+                                    <th>Celular</th>
+                                    <th>Ação</th>
+                                </tr>
+                                <tbody>
+                                    {
+                                        farmacias.map(far => {
+                                            return (
+                                                <tr key={far.far_in_codigo}>
+                                                    <th>{far.far_st_nome}</th>
+                                                    <th>{far.far_st_rua}</th>
+                                                    <th>{far.far_in_numero}</th>
+                                                    <th>{far.far_st_bairro}</th>
+                                                    <th>{far.far_st_cidade + '-' + far.far_ch_estado}</th>
+                                                    <th>{far.far_st_telefone}</th>
+                                                    <th>{far.far_st_celular}</th>
+                                                    <th>
+                                                        <a style={{ marginLeft: 10 }} href='#/editFarmacia' onClick={() => {
+                                                            this.props.setFarmacia(far)
+                                                        }} className='btn btn-primary'>
+                                                            <FaPen color='#FFC10C' />
+                                                        </a>
+                                                        <a style={{ marginLeft: 10 }} className='btn btn-primary' onClick={() => this.props.DeleteFarmacia(far.far_in_codigo, far.usu_in_codigo)} >
+                                                            <FaTrash color='#FFC10C' />
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </Box>

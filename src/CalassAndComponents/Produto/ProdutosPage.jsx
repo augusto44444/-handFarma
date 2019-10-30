@@ -46,37 +46,39 @@ class ProdutosPage extends Component {
                     <div className="box-body">
 
                         {this.state.visible ? <FormProduto funcao={() => this.setState({ visible: !this.state.visible })} onSubmit={this.props.CadProduto} /> :
-                            <table className='table'>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Marca</th>
-                                    <th>Código de barra</th>
-                                    <th>Classificação</th>
-                                    <th>Ação</th>
-                                </tr>
-                                <tbody>
-                                    {
-                                        produtos.map(pro => {
-                                            return (
-                                                <tr key={pro.pro_in_codigo}>
-                                                    <th>{pro.pro_st_nome}</th>
-                                                    <th>{pro.pro_st_marca}</th>
-                                                    <th>{pro.pro_st_cod_barra}</th>
-                                                    <th>{pro.pro_ch_classificacao}</th>
-                                                    <th>
-                                                        <a style={{marginLeft: 10}} href='#/editProduto' className='btn btn-primary' onClick={() => this.props.setProduto(pro)}>
-                                                            <FaPen color='#FFC10C' />
-                                                        </a>
-                                                        <a style={{marginLeft: 10}}  className='btn btn-primary' onClick={() => this.props.DeleteProduto(pro.pro_in_codigo, this.props.token)}>
-                                                            <FaTrash color='#FFC10C' />
-                                                        </a>
-                                                    </th>
-                                                </tr>
-                                            )
-                                        })
-                                    }
-                                </tbody>
-                            </table>}
+                            <div style={{overflowX: 'auto'}}>
+                                <table className='table'>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Marca</th>
+                                        <th>Código de barra</th>
+                                        <th>Classificação</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                    <tbody>
+                                        {
+                                            produtos.map(pro => {
+                                                return (
+                                                    <tr key={pro.pro_in_codigo}>
+                                                        <th>{pro.pro_st_nome}</th>
+                                                        <th>{pro.pro_st_marca}</th>
+                                                        <th>{pro.pro_st_cod_barra}</th>
+                                                        <th>{pro.pro_ch_classificacao}</th>
+                                                        <th>
+                                                            <a style={{marginLeft: 10}} href='#/editProduto' className='btn btn-primary' onClick={() => this.props.setProduto(pro)}>
+                                                                <FaPen color='#FFC10C' />
+                                                            </a>
+                                                            <a style={{marginLeft: 10}}  className='btn btn-primary' onClick={() => this.props.DeleteProduto(pro.pro_in_codigo, this.props.token)}>
+                                                                <FaTrash color='#FFC10C' />
+                                                            </a>
+                                                        </th>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>}
 
                     </div>
                 </Box>
