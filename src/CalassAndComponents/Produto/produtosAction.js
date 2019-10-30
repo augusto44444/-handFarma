@@ -100,3 +100,31 @@ export const editProduto = (values) => {
             })
     }
 }
+
+export const getProdutosByFarmacia = (farmaciaId) => {
+    return dispatch => {
+        if(!farmaciaId) {
+            toastr.warning("Ops", "Está faltando algo")
+            return dispatch(temp())
+        }
+
+        axios.get(`${BASE_URL}/produto/farmacia/${farmaciaId}}`)
+            .then(res => {
+                if(res.data.err) {
+                    console.log(err)
+                    toastr.error("Erro", "Erro ao buscar produtos por farmacia")
+                    return dispatch(temp())
+                }
+
+                return dispatch({
+                    type: 'FETCH_PRODUCTS',
+                    payload: res.data.dados
+                })
+            })
+            .catch(err => {
+                console.log(err)
+                toastr.error("Erro", "Erro ao buscar produtos por farmacia")
+                return dispatch(temp())
+            })
+    }
+}
