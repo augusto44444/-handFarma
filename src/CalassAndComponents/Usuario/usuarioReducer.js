@@ -24,7 +24,8 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 logged: false,
                 user: [],
-                token: ''
+                token: '',
+                userData: null
             }
         case 'USER_DATA':
             localStorage.setItem('userDataHF', JSON.stringify(action.payload))
