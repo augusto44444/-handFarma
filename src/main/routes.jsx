@@ -6,6 +6,7 @@ import FormFarmacia from '../CalassAndComponents/Farmacia/FormFarmacia'
 import ProdutosPage from '../CalassAndComponents/Produto/ProdutosPage'
 import editProduto from '../CalassAndComponents/Produto/editProduto'
 import editFarmacia from '../CalassAndComponents/Farmacia/editFarmacia'
+import ProdutoFarmacia from '../CalassAndComponents/ProdutoFarmacia/ProdutoFarmacia'
 
 
 export default props => (
@@ -16,6 +17,7 @@ export default props => (
         <Route path='/editFarmacia' component={editFarmacia} />
         <Route path='/produtoPage' component={ProdutosPage} />
         <Route path='/editProduto' component={editProduto} />
+        <Route path='/produtoList' component={ProdutoFarmacia} />
 
         <Redirect from='*' to='/' />
     </Router>

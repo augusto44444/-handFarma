@@ -7,4 +7,4 @@ export default props => (
         <MenuItem path='#/farmacia' label='farmaciaPage' icon='plus' />
         <MenuItem path='#/produtoPage' label='Produto' icon='list' />
     </ul>
-)
+) 

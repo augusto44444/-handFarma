@@ -28,6 +28,27 @@ export const FetchAllProdutos = (token) => {
     }
 }
 
+export const Search = (nome) => {
+    return dispatch => {
+        axios.post(`${BASE_URL}/produto/nome/`, {nome})
+            .then(res => {
+                if (res.data.err) {
+                    console.log('Deu ruim')
+                    console.log(res)
+                    return dispatch(temp())
+                } else {
+                    return dispatch({
+                        type: 'FETCH_PRODUCTS',
+                        payload: res.data.dados
+                    })
+                }
+            })
+    }
+}
+
+
+
+
 export const DeleteProduto = (id, token) => {
     return dispatch => {
         axios.delete(`${BASE_URL}/produto/${id}`)

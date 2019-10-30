@@ -53,6 +53,7 @@ export const login = (email, password) => {
 
         axios.post(`${BASE_URL}/usuario/auth`, { email, password })
             .then(res => {
+                console.log(res)
                 if (res.data.error || res.data.dados == null) {
                     toastr.warning(res.data.msg)
                     return dispatch(temp())
@@ -68,26 +69,21 @@ export const login = (email, password) => {
                     ])
 
                 } else {
-                    //     if (!res.data.erro) {
-                    //         if (res.data.dados[0]) {
-                    //             toastr.success(res.data.msg);
-                    //             axios.post(`${BASE_URL}/autonomo/profile`, { codigo: res.data.dados[0].usu_in_codigo })
-                    //                 .then(resp => {
-                    //                     console.log(resp)
-                    //                     dispatch([
-                    //                         UserLoggedIn(res.data.dados[0])
-                    //                     ])
-                    //                 })
-
-                    //         } else {
-                    //             toastr.warning(res.data.msg);
-                    //             dispatch(temp())
-                    //         }
-                    //     } else {
-                    //         toastr.error('Aviso', 'Usuário inexistente ou E-mail incorreto');
-                    //         console.log(res.data.errorMessage);
-                    //         dispatch(temp())
-                    //     }
+                    if (!res.data.erro) {
+                        if (res.data.dados[0]) {
+                            toastr.success(res.data.msg);
+                            dispatch([
+                                UserLoggedIn(res.data),
+                            ])
+                        } else {
+                            toastr.warning(res.data.msg);
+                            dispatch(temp())
+                        }
+                    } else {
+                        toastr.error('Aviso', 'Usuário inexistente ou E-mail incorreto');
+                        console.log(res.data.errorMessage);
+                        dispatch(temp())
+                    }
                 }
             })
     }

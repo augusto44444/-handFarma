@@ -95,6 +95,7 @@ class CreateUser extends Component {
                                 name="classificacao"
                                 component='select'
                             >
+                                <option value='Não possui'>Escolha...</option>
                                 <option value='Livre'>Livre</option>
                                 <option value='MIPs'>MIPs</option>
                                 <option value='Tarja Amarela'>Tarja amarela</option>

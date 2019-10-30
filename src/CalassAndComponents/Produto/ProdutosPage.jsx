@@ -35,7 +35,7 @@ class ProdutosPage extends Component {
                 <Box>
                     <boxHeader>
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                            <Title text='Farmácia Page' />
+                            <Title text='Produtos Page' />
                             <a onClick={() => {
                                 this.setState({ visible: !this.state.visible })
                             }} className='btn btn-primary' style={{ margin: 10 }}>
