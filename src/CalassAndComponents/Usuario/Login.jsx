@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { UserLogOut, login } from './usuarioAction'
 import { IoMdHand } from 'react-icons/io'
+import { editUserFarmacia } from '../Farmacia/FarmaciaAction'
 
 class Navbar extends Component {
     constructor(props) {
@@ -12,6 +13,8 @@ class Navbar extends Component {
             email: '',
             password: ''
         }
+
+        this.editarPerfil = this.editarPerfil.bind(this)
     }
     changeOpen() {
         this.setState({ open: !this.state.open })
@@ -27,6 +30,11 @@ class Navbar extends Component {
         const email = document.getElementById('email').value
         const password = document.getElementById('password').value
         this.props.login(email, password)
+    }
+
+    editarPerfil() {
+        const userId = this.props.auth.user.usu_in_codigo
+        this.props.editUserFarmacia(userId)
     }
 
     render() {
@@ -97,6 +105,9 @@ class Navbar extends Component {
                                 </li>
                                 <li className="user-footer">
                                     <div className="pull-right">
+                                        <a className="btn btn-default btn-flat" onClick={this.editarPerfil}>
+                                            Editar perfil
+                                        </a>
                                         <a className="btn btn-default btn-flat" onClick={() => this.changeOpen()}>
                                             Cancelar
                                         </a>
@@ -166,5 +177,5 @@ class Navbar extends Component {
 
 
 const mapStateToProps = state => ({ auth: state.user })
-const mapDispatchToProps = dispatch => bindActionCreators({ UserLogOut, login }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ UserLogOut, login, editUserFarmacia }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

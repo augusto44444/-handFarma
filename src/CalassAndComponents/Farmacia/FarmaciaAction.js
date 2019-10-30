@@ -108,3 +108,29 @@ export const editFarmacia = (values) => {
     }
 
 }
+
+export const editUserFarmacia = (userId) => {
+    return dispatch => {
+        if(!userId) {
+            toastr.error("Erro", "Está faltando algo")
+            return dispatch(temp())
+        }
+
+        axios.get(`${BASE_URL}/Farmacia/user/${userId}`)
+            .then(res => {
+                if(res.data.err) {
+                    console.log(res.data)
+                    toastr.error("Erro", "Erro ao buscar farmacia")
+                    return dispatch(temp())
+                }
+
+                location.replace('#/editFarmacia')
+                return dispatch(setFarmacia(res.data.dados[0]))
+            })
+            .catch(err => {
+                console.log(err)
+                toastr.error("Erro", "Erro ao buscar farmacia")
+                return dispatch(temp())
+            })
+    }
+}
