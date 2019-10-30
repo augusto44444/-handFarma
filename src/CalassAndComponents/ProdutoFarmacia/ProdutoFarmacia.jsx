@@ -86,7 +86,7 @@ class VinculoPage extends Component {
                                             pro_in_codigo: this.state.produto.pro_in_codigo
                                         }
                                         this.props.SaveProdutoFarmacia(obj)
-                                        this.setState({visible: false, produto: null})
+                                        this.setState({ visible: false, produto: null })
                                     }} style={{ marginBottom: 10, marginTop: 10 }} className='btn btn-primary'>Adicionar</a>
                                 </div>
                             </div>
