@@ -71,10 +71,26 @@ export const login = (email, password) => {
                 } else {
                     if (!res.data.erro) {
                         if (res.data.dados[0]) {
-                            toastr.success(res.data.msg);
-                            dispatch([
-                                UserLoggedIn(res.data),
-                            ])
+                            axios.get(`${BASE_URL}/Farmacia/user/${res.data.dados[0].usu_in_codigo}`)
+                                .then(resp => {
+                                    console.log(resp)
+                                    if (resp.data.err) {
+                                        console.log(resp.data)
+                                        toastr.error("Erro", "Erro ao buscar farmacia")
+                                        return dispatch(temp())
+                                    }
+                                    toastr.success(res.data.msg);
+                                    location.replace('#/editFarmacia')
+                                    return dispatch([
+                                        {type:  'USER_DATA', payload: resp.data.dados[0]},
+                                        UserLoggedIn(res.data),
+                                    ])
+                                })
+                                .catch(err => {
+                                    console.log(err)
+                                    toastr.error("Erro", "Erro ao buscar farmacia")
+                                    return dispatch(temp())
+                                })
                         } else {
                             toastr.warning(res.data.msg);
                             dispatch(temp())

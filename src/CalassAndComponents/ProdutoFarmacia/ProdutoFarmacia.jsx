@@ -38,7 +38,7 @@ class VinculoPage extends Component {
                     </boxHeader>
                     <div className="box-body">
                         <div>
-                            <div style={{marginBottom: 10}} className='col-sm-12 col-md-8'>
+                            <div style={{ marginBottom: 10 }} className='col-sm-12 col-md-8'>
                                 <input type='text' id='search' className='form-control' placeholder='Procurar...' />
                             </div>
                             <div className='col-sm-12 col-md-2' style={{ marginBottom: 10 }}>
@@ -82,8 +82,11 @@ class VinculoPage extends Component {
                                         const obj = {
                                             valor: document.getElementById('valor').value,
                                             qtd: document.getElementById('qtd').value,
-                                            
+                                            far_in_codigo: this.props.farmacia.far_in_codigo,
+                                            pro_in_codigo: this.state.produto.pro_in_codigo
                                         }
+                                        this.props.SaveProdutoFarmacia(obj)
+                                        this.setState({visible: false, produto: null})
                                     }} style={{ marginBottom: 10, marginTop: 10 }} className='btn btn-primary'>Adicionar</a>
                                 </div>
                             </div>
@@ -125,7 +128,8 @@ class VinculoPage extends Component {
 
 const mapStateToProps = state => ({
     token: state.user.token,
-    produtos: state.produtos.produtos
+    produtos: state.produtos.produtos,
+    farmacia: state.user.userData
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ FetchAllProdutos, Search, SaveProdutoFarmacia }, dispatch);
