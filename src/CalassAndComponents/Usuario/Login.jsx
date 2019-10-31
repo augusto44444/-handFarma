@@ -104,7 +104,7 @@ class Navbar extends Component {
                                         </p>
                                     </div>
                                 </li>
-                                <li className="user-footer" style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                                <li className="user-footer" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                                     <div className="pull-right">
 
                                         <a className="btn btn-default btn-flat" onClick={() => this.changeOpen()}>
@@ -151,13 +151,10 @@ class Navbar extends Component {
                             <ul className="dropdown-menu">
                                 <li className="user-header">
                                     <Formulario />
-                                    <p style={{ color: '#FFF', fontSize: 14 }}>Não possui conta? <a href='#/' onClick={() => this.changeOpen()} style={{ color: '#FFF', textDecoration: 'underline' }}>Cadastre-se já!</a></p>
+
                                 </li>
                                 <li className="user-footer">
-                                    <div >
-                                        <a href='#/forgotPassword' style={{ color: '#4AAEFF', textDecoration: 'underline' }} onClick={() => this.changeOpen()}
-                                        >Esqueci minha senha</a>
-                                    </div>
+
                                     <div className="pull-right">
                                         <a onClick={() => {
                                             this.Login();
