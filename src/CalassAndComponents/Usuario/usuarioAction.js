@@ -70,8 +70,10 @@ export const login = (email, password) => {
 
                 } else {
                     if (!res.data.erro) {
+                        console.log('iosaudioahdj')
+                        console.log(res)
                         if (res.data.dados[0]) {
-                            axios.get(`${BASE_URL}/Farmacia/user/${res.data.dados[0].usu_in_codigo}`)
+                            axios.get(`${BASE_URL}/Farmacia/user/${res.data.dados[0].usu_in_cod}`)
                                 .then(resp => {
                                     console.log(resp)
                                     if (resp.data.err) {
