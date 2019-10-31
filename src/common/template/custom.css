@@ -9,3 +9,9 @@
 .skin-blue .main-header li.user-header{
     background: #00bcd4
 }
+
+@media  (max-width: 600px){
+    .tableView{
+        overflow-x: auto;
+    }
+}

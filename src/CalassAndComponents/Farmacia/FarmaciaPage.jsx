@@ -24,6 +24,9 @@ class FarmaciaPage extends Component {
 
     render() {
         const farmacias = this.props.farmacias || []
+        if(this.props.user.usu_ch_type != 'AD'){
+            location.replace("#")
+        }
         return (
             <div style={{ padding: 10 }}>
                 <Box>
@@ -88,7 +91,8 @@ class FarmaciaPage extends Component {
     }
 }
 const mapStateToProps = state => ({
-    farmacias: state.farmacia.farmacias
+    farmacias: state.farmacia.farmacias,
+    user: state.user.user
 });
 const mapDispatchToProps = dispatch =>
     bindActionCreators({ FetchFarmacias, DeleteFarmacia, setFarmacia }, dispatch);

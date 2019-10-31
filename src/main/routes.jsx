@@ -8,6 +8,7 @@ import editProduto from '../CalassAndComponents/Produto/editProduto'
 import editFarmacia from '../CalassAndComponents/Farmacia/editFarmacia'
 import ProdutoFarmacia from '../CalassAndComponents/ProdutoFarmacia/ProdutoFarmacia'
 import ProdutosFarmacia from '../CalassAndComponents/Farmacia/produtosFarmacia'
+import produtoFarmaciaDetail from '../CalassAndComponents/Home/produtoFarmaciaDetail'
 
 
 export default props => (
@@ -20,6 +21,7 @@ export default props => (
         <Route path='/produtoPage' component={ProdutosPage} />
         <Route path='/editProduto' component={editProduto} />
         <Route path='/produtoList' component={ProdutoFarmacia} />
+        <Route path='/produtoFarmaciaDescricao' component={produtoFarmaciaDetail} />
 
         <Redirect from='*' to='/' />
     </Router>

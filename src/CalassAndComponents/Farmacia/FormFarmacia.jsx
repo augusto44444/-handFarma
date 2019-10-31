@@ -187,6 +187,8 @@ class FormFarmacia extends Component {
                                 id='rede'
                             />
                         </div>
+                        <span className='col-sm-12 col-md-2'></span>
+                        <span className='col-sm-12 col-md-10'>Campo só aceita Números</span>
 
 
                         <div style={{ marginTop: 10, marginBottom: 10 }}>
@@ -209,8 +211,6 @@ class FormFarmacia extends Component {
                             />
                         </div>
 
-                        <span className='col-sm-12 col-md-2'></span>
-                        <span className='col-sm-12 col-md-10'>Campo só aceita Números</span>
 
                         <div style={{ marginTop: 10, marginBottom: 10 }}>
                             <Input

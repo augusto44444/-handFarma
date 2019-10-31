@@ -70,10 +70,10 @@ class VinculoPage extends Component {
                                     </div>
                                 </div>
                                 <div className='col-sm-12 col-md-5'>
-                                    <label style={{ marginBottom: 10, marginTop: 10 }} className='col-sm-12 col-md-2'>
-                                        Valor:
+                                    <label style={{ marginBottom: 10, marginTop: 10 }} className='col-sm-12 col-md-3'>
+                                        Quantidade:
                             </label>
-                                    <div className="col-sm-12 col-md-10">
+                                    <div className="col-sm-12 col-md-9">
                                         <input style={{ marginBottom: 10, marginTop: 10 }} type="number" className='form-control' placeholder='999' id='qtd' />
                                     </div>
                                 </div>
@@ -94,8 +94,8 @@ class VinculoPage extends Component {
                             null
                         }
 
-                        <div >
-                            <table className='table table-hover'>
+                        <div  className='tableView'>
+                            <table  className='table table-hover'>
                                 <tr>
                                     <th>Nome</th>
                                     <th>Marca</th>

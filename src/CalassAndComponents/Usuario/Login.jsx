@@ -35,6 +35,7 @@ class Navbar extends Component {
     editarPerfil() {
         const userId = this.props.auth.user.usu_in_codigo
         this.props.editUserFarmacia(userId)
+        this.changeOpen();
     }
 
     render() {
@@ -103,15 +104,20 @@ class Navbar extends Component {
                                         </p>
                                     </div>
                                 </li>
-                                <li className="user-footer">
+                                <li className="user-footer" style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                                     <div className="pull-right">
-                                        <a className="btn btn-default btn-flat" onClick={this.editarPerfil}>
-                                            Editar perfil
-                                        </a>
+
                                         <a className="btn btn-default btn-flat" onClick={() => this.changeOpen()}>
                                             Cancelar
                                         </a>
                                     </div>
+                                    {this.props.auth.user.usu_ch_type == "AD" ? null :
+                                        <div>
+                                            <a className="btn btn-default btn-flat" onClick={this.editarPerfil}>
+                                                Editar perfil
+                                            </a>
+                                        </div>
+                                    }
                                     <div>
                                         <a onClick={() => {
                                             this.props.UserLogOut();
@@ -149,7 +155,7 @@ class Navbar extends Component {
                                 </li>
                                 <li className="user-footer">
                                     <div >
-                                        <a href='#/forgotPassword' style={{color: '#4AAEFF', textDecoration: 'underline'}} onClick={() => this.changeOpen()}
+                                        <a href='#/forgotPassword' style={{ color: '#4AAEFF', textDecoration: 'underline' }} onClick={() => this.changeOpen()}
                                         >Esqueci minha senha</a>
                                     </div>
                                     <div className="pull-right">
