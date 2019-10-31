@@ -33,9 +33,8 @@ class Navbar extends Component {
     }
 
     editarPerfil() {
-        const userId = this.props.auth.user.usu_in_codigo
-        this.props.editUserFarmacia(userId)
         this.changeOpen();
+        location.replace('#/editFarmacia')
     }
 
     render() {
