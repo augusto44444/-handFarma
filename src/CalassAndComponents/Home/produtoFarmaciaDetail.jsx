@@ -8,6 +8,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 class DetailPage extends Component {
+    componentDidMount() {
+        if (this.props.produto == null || this.props.produto == [] || this.props.produto == 0) {
+            location.replace('#')
+        }
+    }
 
     render() {
         const produto = this.props.produto;
