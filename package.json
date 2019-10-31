@@ -1,23 +1,15 @@
 {
   "name": "handFarma",
   "version": "1.0.0",
-  "description": "\"# -handFarma\"",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --inline --hot",
     "production": "webpack --progress -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/augusto44444/-handFarma.git"
-  },
   "keywords": [],
   "author": "Augusto Henrique do Amaral",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/augusto44444/-handFarma/issues"
-  },
-  "homepage": "https://github.com/augusto44444/-handFarma#readme",
   "devDependencies": {
     "admin-lte": "2.3.6",
     "axios": "^0.19.0",
