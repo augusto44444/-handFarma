@@ -48,6 +48,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
-    "react-icons": "^3.7.0"
+    "react-icons": "^3.7.0",
+    "http-server": "0.10.0"
   }
 }
